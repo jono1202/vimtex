@@ -61,7 +61,7 @@ function! s:zathura.forward_search(outfile) dict abort " {{{1
   if !filereadable(self.synctex()) | return | endif
 
   let self.texfile = expand('%:p')
-  let self.outfile = vimtex#paths#relative(a:outfile, getcwd())
+  let self.outfile = a:outfile
 
   let self.cmd_forward_search = printf(
         \ 'zathura --synctex-forward %d:%d:%s %s &',
