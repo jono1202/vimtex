@@ -60,7 +60,7 @@ function! s:zathura.forward_search(outfile) dict abort " {{{1
   if !self.has_synctex | return | endif
   if !filereadable(self.synctex()) | return | endif
 
-  let self.texfile = vimtex#paths#relative(expand('%:p'), b:vimtex.root)
+  let self.texfile = expand('%:p')
   let self.outfile = vimtex#paths#relative(a:outfile, getcwd())
 
   let self.cmd_forward_search = printf(
